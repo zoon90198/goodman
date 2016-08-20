@@ -1,0 +1,24 @@
+extends layout
+block content
+  ul.wrap
+    font(size='7') Good Man
+    br
+    br
+    br
+    br
+    br
+    form(method="post" action="/userlogin")
+      big
+        p userid:
+        input(type='text' name='ID') 
+      big
+        p password:
+        input(type='password' name='password') 
+      br
+      br
+      br
+      button(type="submit") 登入
+      br
+      br
+      br
+      a(href="/register"  title="title").class 註冊會員

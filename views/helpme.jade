@@ -1,0 +1,25 @@
+extends layout
+block content
+ ul.wrap
+    form(method="post")
+      big
+        p 需要求助的事:
+        input(type='text' name='helpthings') 
+      big
+        p 時間:
+        input(type='text' name='time') 
+      big
+        p 地點:
+        input(type='text' name='location')
+      big
+        p 回饋點數:
+        input(type='radio' value='1' name='feedbackpoint')
+        label 1
+        input(type='radio' value='2' name='feedbackpoint') 
+        label 2 
+        input(type='radio' value='3' name='feedbackpoint') 
+        label 3      
+      br
+      br
+      br
+      button(type="submit") 註冊

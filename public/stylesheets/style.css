@@ -1,0 +1,25 @@
+
+
+body {
+    
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    color:#FFFFFF;
+    background-color:	#DEB887;
+}
+
+
+ul.wrap {
+  display: table;
+  margin: 0 auto;
+}
+
+#css_table {
+      display:table;
+  }
+.css_tr {
+      display: table-row;
+  }
+.css_td {
+      display: table-cell;
+  }

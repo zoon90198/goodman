@@ -1,0 +1,24 @@
+extends layout
+block content
+ ul.wrap
+    div(id="css_table")
+      div(class="css_tr")
+          div(class="css_td") 
+            font(size='5') 需要幫助的事
+          div(class="css_td") 
+            font(size='5') 時間
+          div(class="css_td") 
+            font(size='5') 地點
+          div(class="css_td") 
+            font(size='5') 回饋點數
+     each val in data
+      div(class="css_tr")
+          div(class="css_td") 
+            font(size='5') #{val.helpthings}
+          div(class="css_td") 
+            font(size='5') #{val.time}
+          div(class="css_td") 
+            font(size='5') #{val.location}
+          div(class="css_td") 
+            font(size='5') #{val.feedbackpoint}
+     
