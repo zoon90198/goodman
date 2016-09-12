@@ -3,7 +3,7 @@ block content
   ul.wrap
     font(size='5') ID: 
     font(size='5') #{data[0].ID} 
-     br
+    br
     br
     font(size='5') 姓名 :
     font(size='5') #{data[0].username}
@@ -21,12 +21,17 @@ block content
     font(size='5') #{data[0].helpedTimes}
     br
     br
-    a(href="/helpme" title="linkhelpme")
-      img(src="pictures\helpme.jpg" alt="helpme")
+    a(href="/userdata/helpme" title="linkhelpme")
+      img(src="/images/jay.jpg" alt="helpme")
     br
     br
     font(size='7')
-      a(href="/helpme"  title="helpme").class 幫幫我
+      a(href="/userdata/helpme"  title="helpme").class 幫幫我
     br
     font(size='7')
-      a(href="/helpyou"  title="helpyou").class 幫別人
+      a(href="/userdata/helpyou"  title="helpyou").class 幫別人
+    br
+    font(size='7')
+      a(href="/"  title="logout").class log out
+      
+  

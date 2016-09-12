@@ -1,0 +1,9 @@
+extends layout
+block headcontent
+    script(type="text/javascript").
+      if (10 == 10) {
+        confirm("working");
+      }
+block content
+    ul.wrap
+       a(href="/userdata"  title="title").class 回使用者介面
