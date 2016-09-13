@@ -1,2 +1,4 @@
 node_modules
 credential.js
+bower_components
+.sass-cache
