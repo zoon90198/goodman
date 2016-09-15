@@ -4,15 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
+var expressSession = require('express-session');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var register = require('./routes/register');
-var userlogin = require('./routes/userlogin');
-var helpme = require('./routes/helpme');
-var helpyou = require('./routes/helpyou');
+var userdata = require('./routes/userdata');
 var nearby = require('./routes/nearby');
 var classify = require('./routes/classify');
+var thankyou = require('./routes/thankyou');
+var chancefate = require('./routes/chancefate');
 
 var app = express();
 
@@ -25,17 +27,20 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressSession({secret:'zoon', saveUninitialized:false, resave:false}));
+
 
 app.use('/', routes);
 app.use('/users', users);
 app.use('/register', register);
-app.use('/userlogin', userlogin);
-app.use('/helpme', helpme);
-app.use('/helpyou', helpyou);
+app.use('/userdata', userdata);
 app.use('/nearby', nearby);
 app.use('/classify', classify);
+app.use('/thankyou', thankyou);
+app.use('/chancefate', chancefate);
 
 
 // catch 404 and forward to error handler

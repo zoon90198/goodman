@@ -1,0 +1,35 @@
+extends layout
+block content
+  ul.wrap
+    font(size='5') ID: 
+    font(size='5') #{data[0].ID} 
+    br
+    br
+    font(size='5') 姓名 :
+    font(size='5') #{data[0].username}
+    br
+    br
+    font(size='5') 點數 :
+    font(size='5') #{data[0].point}
+    br
+    br
+    font(size='5') 助人次數 :
+    font(size='5') #{data[0].helpTimes}
+    br
+    br
+    font(size='5') 被幫次數 :
+    font(size='5') #{data[0].helpedTimes}
+    br
+    br
+    a(href="/userdata/helpme" title="linkhelpme")
+      img(src="/images/jay.jpg" alt="helpme")
+    br
+    br
+    font(size='7')
+      a(href="/userdata/helpme"  title="helpme").class 幫幫我
+    br
+    font(size='7')
+      a(href="/userdata/helpyou"  title="helpyou").class 幫別人
+    br
+    font(size='7')
+      a(href="/"  title="logout").class log out

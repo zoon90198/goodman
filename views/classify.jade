@@ -1,24 +1,34 @@
 extends layout
 block content
- ul.wrap
-    div(id="css_table")
-      div(class="css_tr")
-          div(class="css_td") 
-            font(size='5') 需要幫助的事
-          div(class="css_td") 
-            font(size='5') 時間
-          div(class="css_td") 
-            font(size='5') 地點
-          div(class="css_td") 
-            font(size='5') 回饋點數
-     each val in data
-      div(class="css_tr")
-          div(class="css_td") 
-            font(size='5') #{val.helpthings}
-          div(class="css_td") 
-            font(size='5') #{val.time}
-          div(class="css_td") 
-            font(size='5') #{val.location}
-          div(class="css_td") 
-            font(size='5') #{val.feedbackpoint}
+  table(style='width:100%')
+    thead
+      tr
+        td 編號
+        td 提出請求者ID
+        td 需要幫助的事
+        td 時間
+        td 地點
+        td 回饋點數
+        td button
+    tbody
+      each val in data
+        tr
+          td #{val.caseid}
+          td #{val.ID}
+          td #{val.helpthings}
+          td #{val.time}
+          td #{val.location}
+          td #{val.feedbackpoint}
+          td
+            button(type="submit" name="#{val.caseid}" value="幫幫我")
+              a(href="/classify/#{val.caseid}") 幫幫我
+
+block headcontent
+  if data.checklist == 0
+    script(type="text/javascript").
+      alert('I\'m helped');
+                             
+                                
+                        
      
+      
