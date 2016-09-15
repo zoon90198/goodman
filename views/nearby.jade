@@ -1,5 +1,6 @@
 extends layout
 block content
+<<<<<<< HEAD
  head
     meta(name='viewport', content='initial-scale=1.0, user-scalable=no')
     meta(charset='utf-8')
@@ -121,3 +122,60 @@ block content
       // [END region_getplaces]
       }
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDbftKJuVwrjuf6Uehp5DyBLqY5PuSFvlc&libraries=places&callback=initAutocomplete', async='', defer='')
+=======
+ ul.wrap
+  head
+    meta(charset='UTF-8')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css')
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+    script(src='https://cdn.essoduke.org/js/tinyMap/jquery.tinyMap-3.4.5.min.js')
+    style.
+      #demo {
+      width: 600px;
+      height: 600px;
+      }
+  body
+    #demo
+    script.
+      var demo = $('#demo');
+      function getLocation() {
+      if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+      demo.text("Geolocation is not supported by this browser.");
+      }
+      }
+      function showPosition(position) {
+      console.log(position);
+      demo.tinyMap({
+      'center': [position.coords.latitude, position.coords.longitude],
+      'zoom': 12,
+      'marker': [
+      {
+      'addr': [position.coords.latitude, position.coords.longitude],
+      'text': '<strong>地址</strong>',
+      'newLabel': '您的位置',
+      'newLabelCSS': 'labels',
+      // 自訂外部圖示
+            'icon': {
+                'url': '/images/big.png',
+                'scaledSize': [48, 48]
+            },
+            // 動畫效果
+            'animation': 'DROP'
+      },
+      {'addr': ['25.041282077030896', '121.56741142272949']},
+      {'addr': ['25.0383270525352', '121.57045841217041'], 'text': '<strong>110台灣台北市信義區松高路68號</strong>'},
+      {'addr': ['25.034516521123315','121.56496524810791'], 'text': '<strong>110台灣台北市信義區台北101</strong>'},
+      {'addr': ['25.037627167884715', '121.56732559204102'], 'text': '<strong>110台灣台北市信義區松壽路20巷</strong>'},
+      {'addr': ['25.039726809855434', '121.55633926391602'], 'text': '<strong>106台灣台北市大安區光復南路280巷25號</strong>'},
+      {'addr': ['25.037160575899154', '121.55350685119629'], 'text': '<strong>106台灣台北市大安區仁愛路四段300巷11號</strong>'},
+      {'addr': ['25.035877438787317', '121.55715465545654'], 'text': '<strong>106台灣台北市大安區光復南路440-1號</strong>'}            ]
+      });
+      }
+      getLocation();
+
+  
+
+    
+>>>>>>> user_login

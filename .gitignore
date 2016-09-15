@@ -1,2 +1,8 @@
 node_modules
+<<<<<<< HEAD
 credential.js
+=======
+credential.js
+bower_components
+.sass-cache
+>>>>>>> user_login

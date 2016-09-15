@@ -15,6 +15,10 @@ var nearby = require('./routes/nearby');
 var classify = require('./routes/classify');
 var thankyou = require('./routes/thankyou');
 var chancefate = require('./routes/chancefate');
+<<<<<<< HEAD
+=======
+var accepthelp = require('./routes/accepthelp');
+>>>>>>> user_login
 
 var app = express();
 
@@ -41,6 +45,10 @@ app.use('/nearby', nearby);
 app.use('/classify', classify);
 app.use('/thankyou', thankyou);
 app.use('/chancefate', chancefate);
+<<<<<<< HEAD
+=======
+app.use('/accepthelp', accepthelp);
+>>>>>>> user_login
 
 
 // catch 404 and forward to error handler
@@ -73,6 +81,8 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
 
 
 module.exports = app;

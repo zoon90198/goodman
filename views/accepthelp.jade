@@ -1,0 +1,48 @@
+extends layout
+block content
+ ul.wrap
+     div(id="css_table")
+            div(class="css_td")
+              div(class="css_tr")
+                  font(size='5') 編號
+                each val in data
+                  div(class="css_tr") #{val.caseid}
+            div(class="css_td")
+              div(class="css_tr")
+                  font(size='5') 提出請求者ID
+                each val in data
+                  div(class="css_tr") #{val.ID}
+            div(class="css_td")
+              div(class="css_tr")
+                  font(size='5') 需要幫助的事
+                each val in data
+                  div(class="css_tr") #{val.helpthings}
+            div(class="css_td") 
+              div(class="css_tr")
+                  font(size='5') 時間
+                each val in data
+                  div(class="css_tr") #{val.time}
+            div(class="css_td") 
+              div(class="css_tr")
+                    font(size='5') 地點
+                  each val in data
+                    div(class="css_tr") #{val.location}
+            div(class="css_td") 
+                div(class="css_tr")
+                    font(size='5') 回饋點數
+                  each val in data
+                    div(class="css_tr") #{val.feedbackpoint}
+            div(class="css_td") 
+                div(class="css_tr")
+                    font(size='5') 你的英雄
+                  each val in data
+                    div(class="css_tr") #{val.yourhero}
+            div(class="css_td")                   
+                    button(type="submit" name="#{val.caseid}")
+                        a(href="/accepthelp/#{val.caseid}")
+                            img(alt="accept")
+             div(class="css_td")                   
+                    button(type="submit" name="#{val.caseid}")
+                        a(href="/accepthelp/#{val.caseid}")
+                            img(alt="I don't help")
+

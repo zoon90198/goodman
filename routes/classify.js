@@ -2,14 +2,18 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 
-router.get('/', function(req,res,next){
+router.get('/', function(req, res, next){
 var connection = mysql.createConnection({
     host:'localhost',
     user:'root',
     database:'goodman'
 });
 connection.connect();
+<<<<<<< HEAD
     connection.query('SELECT * FROM help ', function(err, rows, fields) {
+=======
+    connection.query('SELECT * FROM help', function(err, rows, fields) {
+>>>>>>> user_login
         if (err) throw err;;
         console.log(rows.length);
         res.render('classify', { data: rows });
@@ -30,7 +34,14 @@ router.get('/:helpstatus', function(req,res,next) {
 	            if (err) throw err;
             });
         connection.end();
+<<<<<<< HEAD
 
 });
 
+=======
+});
+
+
+
+>>>>>>> user_login
 module.exports = router;

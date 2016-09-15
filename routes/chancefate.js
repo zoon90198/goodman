@@ -47,7 +47,11 @@ router.get('/:value', function(req,res,next) {
         connection.connect();
             connection.query('UPDATE userid SET point = 1 WHERE ID = "'+ req.session.ID +'"', function(err, rows, fields) {
                     if (err) throw err;
+<<<<<<< HEAD
                 });
+=======
+            });
+>>>>>>> user_login
         connection.end();        
         }
     else{

@@ -48,7 +48,11 @@ router.post('/helpme', function(req, res, next) {
   console.log (req.body);
     req.body.ID = req.session.ID;
     connection.query('INSERT INTO help SET ?',req.body, function(err, rows ,fields){
+<<<<<<< HEAD
     console.log(rows.insertId);
+=======
+
+>>>>>>> user_login
      res.redirect('/thankyou');
     });
     connection.end();
